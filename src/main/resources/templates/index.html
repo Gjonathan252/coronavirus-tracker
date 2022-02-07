@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Coronavirus Tracker Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--=============== BOXICONS ===============-->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" type="text/css" href="/css/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+</head>
+
+<body>
+
+</body>
+
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <!-- <link rel="shortcut icon" href=".png" type="image/x-icon"> -->
+
+    <!--=============== BOXICONS ===============-->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+
+
+    <title> Responsive portfolio website Jonathan </title>
+</head>
+
+<body>
+    <!--=============== HEADER ===============-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Jonathan</a>
+
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class='bx bx-home-alt nav__icon'></i>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">
+                            <i class='bx bx-user nav__icon'></i>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">
+                            <i class='bx bx-book nav__icon'></i>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#work" class="nav__link">
+                            <i class='bx bx-briefcase-alt-2 nav__icon'></i>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class='bx bx-message-square-detail nav__icon'></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Theme change button -->
+            <i class='bx bx-moon change-theme' id="theme-button"></i>
+        </nav>
+    </header>
+
+    <!--=============== MAIN ===============-->
+    <main class="main">
+        <div class="container">
+            <h1>Coronavirus Tracker Application</h1>
+            <p>This application lists the current number of cases reported across the globe</p>
+    
+            <div class="jumbotron">
+                <h1 class="display-4" th:text="${totalReportedCases}"></h1>
+                <p class="lead">Total cases reported as of today</p>
+                <hr class="my-4">
+                <p>
+                    <span>New cases reported since previous day:</span>
+                    <span th:text="${totalNewCases}"></span>
+                </p>
+    
+            </div>
+    
+            <table class="data__style">
+                <tr class="data__style">
+                    <th>State</th>
+                    <th>Country</th>
+                    <th>County</th>
+                    <th>Total cases reported</th>
+                    <th>Changes since last day</th>
+                </tr>
+                <tr class="data__style" th:each="locationStat : ${locationStats}">
+                    <td class="data__style" th:text="${locationStat.state}"></td>
+                    <td class="data__style" th:text="${locationStat.country}"></td>
+                    <td class="data__style" th:text="${locationStat.county}"></td>
+                    <td class="data__style" th:text="${locationStat.latestTotalCases}">0</td>
+                    <td class="data__style" th:text="${locationStat.diffFromPrevDay}">0</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <!--=============== FOOTER ===============-->
+    <footer class="footer">
+        <div class="footer__container container">
+            <h1 class="footer__title">Jonathan</h1>
+
+            <ul class="footer__list">
+                <li>
+                    <a href="https://jonathangonzalez.tech/#about" target="_blank" class="footer__link">About_me</a>
+                </li>
+                <li>
+                    <a href="https://jonathangonzalez.tech/#skills" target="_blank" class="footer__link">Skills</a>
+                </li>
+                <li>
+                    <a href="https://jonathangonzalez.tech/#work" target="_blank" class="footer__link">Projects</a>
+                </li>
+            </ul>
+
+            <ul class="footer__social">
+                <a href="https://www.linkedin.com/in/jonathan-gonzalez-delacruz/" target="_blank"
+                    class="footer__social-link">
+                    <i class='bx bxl-linkedin-square'></i>
+                </a>
+                <a href="https://github.com/Gjonathan252" target="_blank" class="footer__social-link">
+                    <i class='bx bxl-github'></i>
+                </a>
+                <a href="https://twitter.com/ign_alpha" target="_blank" class="footer__social-link">
+                    <i class='bx bxl-twitter'></i>
+                </a>
+
+            </ul>
+
+            <span class="footer__copy">
+                &#169; Jonathan Gonzalez Delacruz 2022
+            </span>
+        </div>
+    </footer>
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script type="text/javascript" src="/js/scrollreveal.min.js"></script>
+
+    <!--=============== SWIPER JS ===============-->
+    <script type="text/javascript" src="/js/swiper-bundle.min.js"></script>
+
+    <!--=============== MIXITUP FILTER ===============-->
+    <script type="text/javascript" src="/js/mixitup.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script type="text/javascript" src="/js/main.js"></script>
+
+</body>
+
+</html>

@@ -4,6 +4,7 @@ public class LocationStats {
 
     private String state;
     private String country;
+    private String county;
     private int latestTotalCases;
     private int diffFromPrevDay;
 
@@ -21,6 +22,14 @@ public class LocationStats {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public String getCounty() {
+        return county;
+    }
+
+    public void setCounty(String county) {
+        this.county = county;
     }
 
     public String getCountry() {
@@ -43,6 +52,7 @@ public class LocationStats {
     public String toString() {
         return "LocationStats{" +
                 "state='" + state + '\'' +
+                ", county='" + county + '\'' +
                 ", country='" + country + '\'' +
                 ", latestTotalCases=" + latestTotalCases +
                 '}';
