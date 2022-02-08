@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <html xmlns:th="http://www.thymeleaf.org">
 
@@ -11,32 +12,6 @@
     <link rel="stylesheet" type="text/css" href="/css/swiper-bundle.min.css">
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
 
-</head>
-
-<body>
-
-</body>
-
-
-</html>
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--=============== FAVICON ===============-->
-    <!-- <link rel="shortcut icon" href=".png" type="image/x-icon"> -->
-
-    <!--=============== BOXICONS ===============-->
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-
-
-
-    <title> Responsive portfolio website Jonathan </title>
 </head>
 
 <body>
@@ -89,7 +64,7 @@
         <div class="container">
             <h1>Coronavirus Tracker Application</h1>
             <p>This application lists the current number of cases reported across the globe</p>
-    
+
             <div class="jumbotron">
                 <h1 class="display-4" th:text="${totalReportedCases}"></h1>
                 <p class="lead">Total cases reported as of today</p>
@@ -98,9 +73,9 @@
                     <span>New cases reported since previous day:</span>
                     <span th:text="${totalNewCases}"></span>
                 </p>
-    
+
             </div>
-    
+
             <table class="data__style">
                 <tr class="data__style">
                     <th>State</th>
