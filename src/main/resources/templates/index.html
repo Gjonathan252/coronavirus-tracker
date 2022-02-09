@@ -16,83 +16,49 @@
 
 <body>
     <!--=============== HEADER ===============-->
-    <header class="header" id="header">
+    <header class="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">Jonathan</a>
-
-            <!-- <div class="nav__menu">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="#home" class="nav__link active-link">
-                            <i class='bx bx-home-alt nav__icon'></i>
-                        </a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="#about" class="nav__link">
-                            <i class='bx bx-user nav__icon'></i>
-                        </a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="#skills" class="nav__link">
-                            <i class='bx bx-book nav__icon'></i>
-                        </a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="#work" class="nav__link">
-                            <i class='bx bx-briefcase-alt-2 nav__icon'></i>
-                        </a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="#contact" class="nav__link">
-                            <i class='bx bx-message-square-detail nav__icon'></i>
-                        </a>
-                    </li>
-                </ul>
-            </div> -->
-
-            <!-- Theme change button -->
-            <!-- <i class='bx bx-moon change-theme' id="theme-button"></i> -->
+            <a href="#" class="nav__logo">Corona Virus Tracker</a>
         </nav>
     </header>
 
     <!--=============== MAIN ===============-->
     <main class="main">
-        <div class="container">
-            <h1>Coronavirus Tracker Application</h1>
-            <p>This application lists the current number of cases reported across the globe</p>
+        <section class="home section" id="home">
+            <div class="container">
+                <div>
+                    <span class="data">Total confirmed: </span>
+                    <span class="data__trc" th:text="${totalReportedCases}" th:remove="tag"></span>
+                </div>
+        </section>
+        <section class="home section" id="home">
+            <div class="container__table">
+                <ul class="responsive-table">
+                    <li class="table-header">
+                        <div class="col col-1">State</div>
+                        <div class="col col-2">Country</div>
+                        <div class="col col-3">County</div>
+                        <div class="col col-4">Total Confirmed Cases</div>
+                        <div class="col col-5">Changes Since Last Day</div>
 
-            <div class="jumbotron">
-                <h1 class="display-4" th:text="${totalReportedCases}"></h1>
-                <p class="lead">Total cases reported as of today</p>
-                <hr class="my-4">
-                <p>
-                    <span>New cases reported since previous day:</span>
-                    <span th:text="${totalNewCases}"></span>
-                </p>
-
+                    </li>
+                    <section class="data__seperate">
+                        <li class="table-row" th:each="locationStat : ${locationStats}">
+                            <div class="col col-2" data-label="Country" th:text="${locationStat.country}"></div>
+                            <div class="col col-1" data-label="State" th:text="${locationStat.state}"></div>
+                            <div class="col col-3" data-label="County" th:text="${locationStat.county}"></div>
+                            <div class="col col-4" data-label="Total Confirmed Cases"
+                                th:text="${locationStat.latestTotalCases}">0
+                            </div>
+                            <div class="col col-5" data-label="Changes Since Last Day"
+                                h:text="${locationStat.diffFromPrevDay}">
+                                0
+                            </div>
+                    </section>
+                    </li>
+                </ul>
             </div>
-
-            <table class="data__style">
-                <tr class="data__style">
-                    <th>State</th>
-                    <th>Country</th>
-                    <th>County</th>
-                    <th>Total cases reported</th>
-                    <th>Changes since last day</th>
-                </tr>
-                <tr class="data__style" th:each="locationStat : ${locationStats}">
-                    <td class="data__style" th:text="${locationStat.state}"></td>
-                    <td class="data__style" th:text="${locationStat.country}"></td>
-                    <td class="data__style" th:text="${locationStat.county}"></td>
-                    <td class="data__style" th:text="${locationStat.latestTotalCases}">0</td>
-                    <td class="data__style" th:text="${locationStat.diffFromPrevDay}">0</td>
-                </tr>
-            </table>
-        </div>
+        </section>
     </main>
 
     <!--=============== FOOTER ===============-->
