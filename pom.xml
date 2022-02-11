@@ -54,16 +54,9 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>tech.jonathangonzalez.coronavirustracker.CoronavirusTrackerApplication</mainClass>
-					<layout>ZIP</layout>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>
