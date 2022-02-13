@@ -4,7 +4,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Coronavirus Tracker Application</title>
+    <title>Global Coronavirus Tracker Application</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <!--=============== BOXICONS ===============-->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -18,7 +18,7 @@
     <!--=============== HEADER ===============-->
     <header class="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">Corona Virus Tracker</a>
+            <a href="#" class="nav__logo">Global Corona Virus Tracker</a>
         </nav>
     </header>
 
@@ -27,30 +27,28 @@
         <section class="home section" id="home">
             <div class="container total__header">
                 <span class="total__confirmed">Total confirmed: </span>
-                <span th:text="${totalReportedCases}" th:remove="tag"></span>
+                <span th:text="${Global_totalReportedCases}" th:remove="tag"></span>
             </div>
         </section>
         <section class="home section" id="home">
             <div class="container__table">
                 <ul class="responsive-table">
                     <li class="table-header">
-                        <div class="col col-1">State</div>
-                        <div class="col col-2">Country</div>
-                        <div class="col col-3">County</div>
+                        <div class="col col-1">Country</div>
+                        <div class="col col-2">Province</div>
                         <div class="col col-4">Total Confirmed Cases</div>
                         <div class="col col-5">Changes Since Last Day</div>
 
                     </li>
                     <section class="data__seperate">
-                        <li class="table-row" th:each="locationStat : ${locationStats}">
-                            <div class="col col-2" data-label="Country" th:text="${locationStat.country}"></div>
-                            <div class="col col-1" data-label="State" th:text="${locationStat.state}"></div>
-                            <div class="col col-3" data-label="County" th:text="${locationStat.county}"></div>
+                        <li class="table-row" th:each="Global_locationStat : ${Global_locationStats}">
+                            <div class="col col-2" data-label="Country" th:text="${Global_locationStat.country}"></div>
+                            <div class="col col-1" data-label="Province" th:text="${Global_locationStat.state}"></div>
                             <div class="col col-4" data-label="Total Confirmed Cases"
-                                th:text="${locationStat.latestTotalCases}">0
+                                th:text="${Global_locationStat.latestTotalCases}">0
                             </div>
                             <div class="col col-5" data-label="Changes Since Last Day"
-                                th:text="${locationStat.diffFromPrevDay}">
+                                th:text="${Global_locationStat.diffFromPrevDay}">
                                 0
                             </div>
                     </section>

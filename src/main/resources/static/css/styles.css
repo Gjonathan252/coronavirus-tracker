@@ -18,7 +18,9 @@
   --lig: 75%;
   --second-hue: 219;
 
-  --first-color: hsl(var(--first-hue), var(--sat), var(--lig));
+  --nav-color: red;
+  --nav-color-alt: rgb(211, 211, 211); /* -4% */
+  --first-color: hsl(var(--first-hue), 100%, 58%);
   --first-color-alt: hsl(var(--first-hue), var(--sat), 71%); /* -4% */
   --title-color: hsl(var(--second-hue), 15%, 95%);
   --text-color: hsl(var(--second-hue), 8%, 75%);
@@ -34,10 +36,11 @@
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
+  --big-font-size: 1.5rem;
+  --normal-font-size: .95rem;
+  --small-font-size: .80rem;
   --smaller-font-size: .75rem;
-  --tiny-font-size: .625rem;
+  --tiny-font-size: .62rem;
 
   /*========== Font weight ==========*/
   --font-medium: 500;
@@ -103,8 +106,8 @@ a {
 
 /* Header */
 .header {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 20px;
   left: 0;
   width: 100%;
   background-color: var(--body-color);
@@ -112,15 +115,14 @@ a {
   transition: .4s; /* for light mode animation */
 }
 .nav__logo {
-  color: var(--first-color);
+  color: var(--nav-color);
   font-weight: var(--font-medium);
   transition: .4s;
 }
 .nav__logo:hover {
-  color: var(--first-color-alt);
+  color: var(--nav-color-alt);
 }
 /* Change background header */
-
 
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar {
@@ -138,8 +140,7 @@ a {
   background-color: hsl(var(--second-hue), 8%, 20%);
 }
 
-/* Responsive Table */
-
+/*=============== Responsive Table ===============*/
 .responsive-table li {
   border-radius: .5rem;
   padding: 1rem;
@@ -174,6 +175,67 @@ a {
 }
 .responsive-table .col-5 {
   flex-basis: 15%;
+}
+
+/*=============== Header__TotalConfirmed ===============*/
+.total__header {
+  margin-top: 50px;
+}
+.total__confirmed {
+  color: white;
+}
+.data__TC{
+  color: red;
+}
+
+/*=============== FOOTER ===============*/
+.footer {
+  background-color: var(--first-color);
+}
+
+.footer__container {
+  padding: 2rem 0 6rem;
+}
+
+.footer__title, .footer__link {
+  color: var(--body-color);
+  -webkit-text-stroke: 1px rgb(31, 31, 31);
+}
+
+.footer__title {
+  margin-top: 50px;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.footer__list {
+  display: flex;
+  justify-content: center;
+  column-gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.footer__social {
+  display: flex;
+  justify-content: center;
+  column-gap: 1.25rem;
+}
+
+.footer__social-link {
+  background-color: var(--body-color);
+  color: var(--first-color);
+  padding: .25rem;
+  border-radius: .25rem;
+  font-size: 1rem;
+  display: inline-flex;
+}
+
+.footer__copy {
+  display: block;
+  margin-top: 4.5rem;
+  color: var(--container-color);
+  text-align: center;
+  font-size: var(--smaller-font-size);
 }
 
 
