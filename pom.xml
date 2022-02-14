@@ -68,20 +68,8 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<configuration>
-					<overlays>
-						<overlay>
-							<groupId>ca.uhn.hapi.fhir</groupId>
-							<artifactId>hapi-fhir-testpage-overlay</artifactId>
-						</overlay>
-					</overlays>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
+				<version>3.9.0</version>
 				<configuration>
 					<source>11</source>
 					<target>11</target>
